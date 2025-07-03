@@ -5,6 +5,3 @@ metadata:
   namespace: spring-boot-app
 spec:
   host: spring-boot-app.spring-boot-app.svc.cluster.local
-  trafficPolicy:
-    tls:
-      mode: ISTIO_MUTUAL
