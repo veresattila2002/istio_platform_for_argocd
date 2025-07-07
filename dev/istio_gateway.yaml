@@ -1,22 +1,21 @@
-apiVersion: argoproj.io/v1alpha1
-kind: Application
+apiVersion: networking.istio.io/v1beta1
+kind: Gateway 
 metadata:
-  name: istio-gateway
-  namespace: argo
+  name: spring-boot-app-gateway
+  namespace: istio-system
 spec:
-  project: default
-  source:
-    repoURL: https://istio-release.storage.googleapis.com/charts
-    chart: gateway
-    targetRevision: 1.26.2
-    helm:
-      releaseName: istio-gateway
-      values: |
-        service:
-          type: LoadBalancer
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: istio-system
-  syncPolicy:
-    syncOptions:
-      - CreateNamespace=true
+  selector:
+    istio: ingressgateway
+  servers:
+    - port:
+        number: 8080
+        name: firstapp
+        protocol: HTTP 
+      hosts:
+        - "spring-boot-app.127.0.0.1.nip.io"
+    - port:
+        number: 80
+        name: secondapp
+        protocol: HTTP 
+      hosts:
+        - "spring-boot-second-app.127.0.0.01.nip.io"
