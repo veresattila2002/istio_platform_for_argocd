@@ -6,16 +6,4 @@ metadata:
 spec:
   selector:
     istio: ingressgateway
-  servers:
-    - port:
-        number: 8080
-        name: firstapp
-        protocol: HTTP 
-      hosts:
-        - "app1.demo.hu"
-    - port:
-        number: 80
-        name: secondapp
-        protocol: HTTP 
-      hosts:
-        - "app2.demo.hu"
+
