@@ -11,10 +11,10 @@ spec:
     targetRevision: 25.21.0
     helm:
       releaseName: prometheus
-      insecureSkipTlsVerify: true
-    destination:
-      server: https://kubernetes.default.svc
-      namespace: prometheus-system
+      insecureSkipTLSVerify: true
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: prometheus-system
   syncPolicy:
     automated:
       prune: true
