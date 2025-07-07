@@ -3,5 +3,7 @@ kind: DestinationRule
 metadata:
   name: spring-boot-app
   namespace: spring-boot-app
+  annotations:
+    argocd.argoproj.io/sync-wave: "4"
 spec:
   host: spring-boot-app.spring-boot-app.svc.cluster.local
