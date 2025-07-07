@@ -18,4 +18,4 @@ spec:
         name: secondapp
         protocol: HTTP 
       hosts:
-        - "spring-boot-second-app.127.0.0.01.nip.io"
+        - "spring-boot-second-app.127.0.0.1.nip.io"
