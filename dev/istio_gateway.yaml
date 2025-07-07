@@ -12,10 +12,10 @@ spec:
         name: firstapp
         protocol: HTTP 
       hosts:
-        - "spring-boot-app.127.0.0.1.nip.io"
+        - "spring-boot-app"
     - port:
         number: 80
         name: secondapp
         protocol: HTTP 
       hosts:
-        - "spring-boot-second-app.127.0.0.1.nip.io"
+        - "spring-boot-app"
